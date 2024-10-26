@@ -28,8 +28,8 @@
   },
   "eslintConfig": {
     "extends": [
-      "resume",
-      "resume/jest"
+      "react-app",
+      "react-app/jest"
     ]
   },
   "browserslist": {
@@ -45,9 +45,6 @@
     ]
   },
   "devDependencies": {
-    "eslint": "^8.57.1",
-    "eslint-config-react-app": "^7.0.1",
-    "eslint-plugin-react": "^7.37.1",
     "tailwindcss": "^3.4.10"
   }
 }
