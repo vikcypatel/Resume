@@ -18,7 +18,7 @@ const Header = () => {
       <div className='container mx-auto h-full flex items-center justify-between'>
       {/* logo */}
 
-      <a href='#'>
+      <a href="#" aria-label="Go to top of the page" onClick={(e) => e.preventDefault()}>
       <img src="/assets/img/logo.png" className='logo' alt="Logo" />
 
       </a>
