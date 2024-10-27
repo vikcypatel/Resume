@@ -18,10 +18,10 @@ const Header = () => {
       <div className='container mx-auto h-full flex items-center justify-between'>
       {/* logo */}
 
-      <a href="#" aria-label="Go to top of the page" onClick={(e) => e.preventDefault()}>
-      <img src="/assets/img/logo.png" className='logo' alt="Logo" />
+      <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+  <img src="/assets/img/logo.png" className="logo" alt="Logo" />
+</button>
 
-      </a>
       
       {/* nav */}
       <div className='hidden lg:block'>
