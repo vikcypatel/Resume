@@ -1,5 +1,4 @@
 import React from 'react'
-import { IoMic } from 'react-icons/io5'
 
 // import Image
 import Image from '../assets/img/about.svg'

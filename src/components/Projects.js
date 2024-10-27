@@ -27,7 +27,7 @@ function Projects() {
   },[item]);
 
 const handleClick = (e,index) => {
-  setItem({name: e.target.textContent .toLocaleLowerCase()})
+  setItem({name: e.target.textContent.toLocaleLowerCase()})
   setActive(index);
 }
   return (

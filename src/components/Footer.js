@@ -3,8 +3,6 @@ import React from "react";
 // import social data
 import { social } from "../data";
 
-//import logo
-import Logo from "../assets/img/logo.png"; 
 const Footer = () => {
   return (
     <footer className="bg-tertiary py-12">
