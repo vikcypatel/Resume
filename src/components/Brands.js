@@ -1,21 +1,39 @@
-import React from 'react'
+import React from 'react';
+import { useInView } from 'react-intersection-observer';
+import 'animate.css';
 
-// import brands data
-import {brands} from  '../data';
+// Import brands data
+import { brands } from '../data';
+
 const Brands = () => {
-  return (
-    <section className='min-h-[146px] bg-tertiary flex items-center'> 
-    <div className="conatiner mx-auto flex md:justify-between items-center flex-wrap justify-evenly">
-      {
-        brands.map((brand,index)=>{
-          return(<div key={index }>
-            <img src={brand.img} alt="" />
-          </div> );
-        })
-      }
-      </div> 
-    </section>
-  )
-}
+  // Using Intersection Observer
+  const { ref, inView } = useInView({
+    triggerOnce: true, // Only animate once
+    threshold: 1, // Trigger animation when 100% of the element is in view
+  });
 
-export default Brands
+  return (
+    <section className="min-h-[146px] bg-tertiary flex items-center">
+      <div
+        ref={ref}
+        className="container mx-auto flex md:justify-between items-center flex-wrap justify-evenly"
+      >
+        {brands.map((brand, index) => {
+          return (
+            <div
+              key={index}
+              className={`your-element ${
+                inView ? 'animate__animated animate__fadeInUp' : 'opacity-0'
+              }`}
+              style={{ animationDelay: `${index * 0.1}s` }} // Staggered delay for each brand
+            >
+              <img src={brand.img} alt="" />
+            </div>
+          );
+        })}
+      </div>
+    </section>
+  );
+};
+
+export default Brands;
