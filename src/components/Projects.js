@@ -70,7 +70,7 @@ const NavWithAnimation = ({ item, index, active, handleClick }) => {
     <li
       ref={ref}
       onClick={(e) => handleClick(e, index)}
-      className={`cursor-pointer capitalize m-4 ${inView ? 'animate__animated animate__fadeInLeft' : ''} ${active === index ? 'active' : ''}`}
+      className={`cursor-pointer capitalize m-4 ${inView ? 'animate__animated animate__fadeInLeft' : ''} ${active === index ? 'active' : ''} ${inView ? 'visible' : 'invisible'}`}
       style={{ animationDelay: `${index * 0.1}s` }} // Staggered delay for each nav item
     >
       {item.name}
@@ -82,13 +82,13 @@ const NavWithAnimation = ({ item, index, active, handleClick }) => {
 const ProjectWithAnimation = ({ item, index }) => {
   const { ref, inView } = useInView({
     triggerOnce: true, // Only animate once
-    threshold: 0.3, // Trigger animation when 30% of the project is in view
+    threshold: 0.1, // Trigger animation when 30% of the project is in view
   });
 
   return (
     <div
       ref={ref}
-      className={`animate__animated ${inView ? 'animate__fadeInUp' : ''}`} // fadeInBottom effect with fadeInUp as fallback
+      className={`animate__animated ${inView ? 'animate__fadeInUp' : ''} visible `} // fadeInBottom effect with fadeInUp as fallback
       style={{ animationDelay: `${index * 0.1}s` }} // Staggered delay for each project
     >
       {inView && <Project item={item} />} {/* Only show project after animation starts */}

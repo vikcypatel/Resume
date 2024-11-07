@@ -4,10 +4,9 @@ import { skills } from '../data';
 import 'animate.css';
 
 const Skills = () => {
-  // Using Intersection Observer
   const { ref, inView } = useInView({
-    triggerOnce: true, // Only animate once
-    threshold: 0.8, // Trigger animation when 80% of the component is in view
+    triggerOnce: true,
+    threshold: 0.8,
   });
 
   return (
@@ -20,8 +19,8 @@ const Skills = () => {
                 key={index}
                 className={`flex items-center justify-center ${
                   inView ? 'animate__animated animate__fadeInUp' : ''
-                }`}
-                style={{ animationDelay: `${index * 0.1}s` }} // Staggered delay for each skill
+                } ${inView ? 'visible' : 'invisible'}`}
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <img src={skill.image} alt="" />
               </div>

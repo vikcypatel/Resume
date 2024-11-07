@@ -4,7 +4,7 @@ import React from 'react'
 import { contact } from '../data'
 const Contact = () => {
   return (
-    <section className='section bg-primary'>
+    <section className='section bg-primary' id='contact'>
         <div className=' container mx-auto'>
             {/*  section title */}
             <div className='flex flex-col items-center text-center'>

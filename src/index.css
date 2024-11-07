@@ -59,3 +59,52 @@
       height: 100px;
     }
   }
+
+
+  .project-card {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .project-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .project-image {
+    transition: transform 0.3s ease;
+    width: 100%;
+    height: auto;
+  }
+  
+  .project-card:hover .project-image {
+    transform: scale(1.0); /* Slight zoom-in effect on hover */
+  }
+  
+  /* Overlay with dark gold background */
+  .project-overlay {
+
+    background: linear-gradient(to top,rgba(184, 134, 11, 0.5) 20%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+align-items: center;
+    
+  }
+  
+  .project-card:hover .project-overlay {
+    opacity: 1;
+  }
+  
+  .fade-in-bottom {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease-in-out;
+    transform: scale(0.5); /* Slight zoom-in effect on hover */
+  }
+  
+  .project-card:hover .fade-in-bottom {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  

@@ -17,7 +17,7 @@ const Portfolio = () => {
           ref={ref}
           className={`flex flex-col items-center text-center ${
             inView ? 'animate__animated animate__jackInTheBox' : ''
-          }`}
+          } ${inView ? 'visible' : 'invisible'}`}
         >
           <h2
             className="section-title before:content-portfolio relative before:absolute before:opacity-40 before:-top-[2rem] before:-left-3/4 before:hidden before:lg-block"
